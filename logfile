@@ -1,0 +1,194 @@
+2021-03-27 21:49:12.642 CET [8100] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 21:49:12.646 CET [8100] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 21:49:12.646 CET [8100] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 21:49:12.647 CET [8100] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 21:49:12.652 CET [8101] LOG:  database system was shut down at 2021-03-27 21:49:02 CET
+2021-03-27 21:49:12.656 CET [8100] LOG:  database system is ready to accept connections
+2021-03-27 21:49:42.395 CET [8100] LOG:  received fast shutdown request
+2021-03-27 21:49:42.396 CET [8100] LOG:  aborting any active transactions
+2021-03-27 21:49:42.399 CET [8100] LOG:  background worker "logical replication launcher" (PID 8107) exited with exit code 1
+2021-03-27 21:49:42.399 CET [8102] LOG:  shutting down
+2021-03-27 21:49:42.408 CET [8100] LOG:  database system is shut down
+2021-03-27 21:56:08.640 CET [8184] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 21:56:08.643 CET [8184] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 21:56:08.643 CET [8184] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 21:56:08.644 CET [8184] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 21:56:08.649 CET [8185] LOG:  database system was shut down at 2021-03-27 21:56:02 CET
+2021-03-27 21:56:08.653 CET [8184] LOG:  database system is ready to accept connections
+2021-03-27 21:59:11.287 CET [8184] LOG:  received fast shutdown request
+2021-03-27 21:59:11.288 CET [8184] LOG:  aborting any active transactions
+2021-03-27 21:59:11.290 CET [8184] LOG:  background worker "logical replication launcher" (PID 8191) exited with exit code 1
+2021-03-27 21:59:11.291 CET [8186] LOG:  shutting down
+2021-03-27 21:59:11.311 CET [8184] LOG:  database system is shut down
+2021-03-27 21:59:13.312 CET [8234] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 21:59:13.314 CET [8234] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 21:59:13.314 CET [8234] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 21:59:13.315 CET [8234] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 21:59:13.320 CET [8237] LOG:  database system was shut down at 2021-03-27 21:59:13 CET
+2021-03-27 21:59:13.327 CET [8234] LOG:  database system is ready to accept connections
+2021-03-27 22:05:10.435 CET [8234] LOG:  received fast shutdown request
+2021-03-27 22:05:10.436 CET [8234] LOG:  aborting any active transactions
+2021-03-27 22:05:10.438 CET [8234] LOG:  background worker "logical replication launcher" (PID 8243) exited with exit code 1
+2021-03-27 22:05:10.438 CET [8238] LOG:  shutting down
+2021-03-27 22:05:10.452 CET [8234] LOG:  database system is shut down
+2021-03-27 22:05:13.022 CET [8296] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:05:13.026 CET [8296] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:05:13.026 CET [8296] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:05:13.027 CET [8296] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:05:13.032 CET [8297] LOG:  database system was shut down at 2021-03-27 22:05:12 CET
+2021-03-27 22:05:13.037 CET [8296] LOG:  database system is ready to accept connections
+2021-03-27 22:10:14.689 CET [8336] ERROR:  null value in column "id" of relation "clients" violates not-null constraint
+2021-03-27 22:10:14.689 CET [8336] DETAIL:  Failing row contains (null, 123).
+2021-03-27 22:10:14.689 CET [8336] STATEMENT:  INSERT INTO clients (broker_id) VALUES (123);
+2021-03-27 22:12:59.899 CET [8296] LOG:  received fast shutdown request
+2021-03-27 22:12:59.900 CET [8296] LOG:  aborting any active transactions
+2021-03-27 22:12:59.901 CET [8296] LOG:  background worker "logical replication launcher" (PID 8303) exited with exit code 1
+2021-03-27 22:12:59.902 CET [8298] LOG:  shutting down
+2021-03-27 22:12:59.914 CET [8296] LOG:  database system is shut down
+2021-03-27 22:13:02.332 CET [8444] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:13:02.334 CET [8444] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:13:02.334 CET [8444] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:13:02.335 CET [8444] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:13:02.340 CET [8445] LOG:  database system was shut down at 2021-03-27 22:13:02 CET
+2021-03-27 22:13:02.347 CET [8444] LOG:  database system is ready to accept connections
+2021-03-27 22:13:02.424 CET [8453] ERROR:  relation "clients_id_seq" does not exist at character 69
+2021-03-27 22:13:02.424 CET [8453] STATEMENT:  CREATE TABLE public.clients (
+	  id integer NOT NULL DEFAULT nextval('clients_id_seq'),
+	
+	
+	  broker_id integer NOT NULL
+	);
+2021-03-27 22:13:02.428 CET [8453] ERROR:  relation "public.clients" does not exist
+2021-03-27 22:13:02.428 CET [8453] STATEMENT:  ALTER SEQUENCE public.clients_id_seq OWNED BY public.clients.id;
+2021-03-27 22:13:33.214 CET [8444] LOG:  received fast shutdown request
+2021-03-27 22:13:33.215 CET [8444] LOG:  aborting any active transactions
+2021-03-27 22:13:33.217 CET [8444] LOG:  background worker "logical replication launcher" (PID 8451) exited with exit code 1
+2021-03-27 22:13:33.217 CET [8446] LOG:  shutting down
+2021-03-27 22:13:33.235 CET [8444] LOG:  database system is shut down
+2021-03-27 22:13:35.771 CET [8476] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:13:35.774 CET [8476] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:13:35.774 CET [8476] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:13:35.775 CET [8476] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:13:35.780 CET [8477] LOG:  database system was shut down at 2021-03-27 22:13:35 CET
+2021-03-27 22:13:35.784 CET [8476] LOG:  database system is ready to accept connections
+2021-03-27 22:13:35.847 CET [8485] ERROR:  relation "clients_id_seq" does not exist at character 69
+2021-03-27 22:13:35.847 CET [8485] STATEMENT:  CREATE TABLE public.clients (
+	  id integer NOT NULL DEFAULT nextval('clients_id_seq'),
+	
+	
+	  broker_id integer NOT NULL
+	);
+2021-03-27 22:13:35.852 CET [8485] ERROR:  relation "public.clients" does not exist
+2021-03-27 22:13:35.852 CET [8485] STATEMENT:  ALTER SEQUENCE public.clients_id_seq OWNED BY public.clients.id;
+2021-03-27 22:14:48.024 CET [8476] LOG:  received fast shutdown request
+2021-03-27 22:14:48.025 CET [8476] LOG:  aborting any active transactions
+2021-03-27 22:14:48.027 CET [8476] LOG:  background worker "logical replication launcher" (PID 8483) exited with exit code 1
+2021-03-27 22:14:48.027 CET [8478] LOG:  shutting down
+2021-03-27 22:14:48.046 CET [8476] LOG:  database system is shut down
+2021-03-27 22:14:50.633 CET [8511] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:14:50.636 CET [8511] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:14:50.636 CET [8511] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:14:50.637 CET [8511] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:14:50.642 CET [8512] LOG:  database system was shut down at 2021-03-27 22:14:50 CET
+2021-03-27 22:14:50.655 CET [8511] LOG:  database system is ready to accept connections
+2021-03-27 22:14:50.719 CET [8520] ERROR:  relation "clients_id_seq" does not exist at character 69
+2021-03-27 22:14:50.719 CET [8520] STATEMENT:  CREATE TABLE public.clients (
+	  id integer NOT NULL DEFAULT nextval('clients_id_seq'),
+	
+	
+	  broker_id integer NOT NULL
+	);
+2021-03-27 22:14:50.724 CET [8520] ERROR:  relation "public.clients" does not exist
+2021-03-27 22:14:50.724 CET [8520] STATEMENT:  ALTER SEQUENCE clients_id_seq OWNED BY public.clients.id;
+2021-03-27 22:15:56.094 CET [8511] LOG:  received fast shutdown request
+2021-03-27 22:15:56.095 CET [8511] LOG:  aborting any active transactions
+2021-03-27 22:15:56.097 CET [8511] LOG:  background worker "logical replication launcher" (PID 8518) exited with exit code 1
+2021-03-27 22:15:56.097 CET [8513] LOG:  shutting down
+2021-03-27 22:15:56.113 CET [8511] LOG:  database system is shut down
+2021-03-27 22:15:58.568 CET [8548] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:15:58.572 CET [8548] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:15:58.572 CET [8548] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:15:58.573 CET [8548] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:15:58.579 CET [8549] LOG:  database system was shut down at 2021-03-27 22:15:58 CET
+2021-03-27 22:15:58.587 CET [8548] LOG:  database system is ready to accept connections
+2021-03-27 22:28:43.566 CET [8548] LOG:  received fast shutdown request
+2021-03-27 22:28:43.566 CET [8548] LOG:  aborting any active transactions
+2021-03-27 22:28:43.568 CET [8548] LOG:  background worker "logical replication launcher" (PID 8555) exited with exit code 1
+2021-03-27 22:28:43.568 CET [8550] LOG:  shutting down
+2021-03-27 22:28:43.580 CET [8548] LOG:  database system is shut down
+2021-03-27 22:28:46.069 CET [8653] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:28:46.071 CET [8653] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:28:46.072 CET [8653] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:28:46.073 CET [8653] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:28:46.079 CET [8654] LOG:  database system was shut down at 2021-03-27 22:28:45 CET
+2021-03-27 22:28:46.085 CET [8653] LOG:  database system is ready to accept connections
+2021-03-27 22:29:58.414 CET [8653] LOG:  received fast shutdown request
+2021-03-27 22:29:58.415 CET [8653] LOG:  aborting any active transactions
+2021-03-27 22:29:58.419 CET [8653] LOG:  background worker "logical replication launcher" (PID 8660) exited with exit code 1
+2021-03-27 22:29:58.419 CET [8655] LOG:  shutting down
+2021-03-27 22:29:58.438 CET [8653] LOG:  database system is shut down
+2021-03-27 22:30:01.040 CET [8807] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-27 22:30:01.044 CET [8807] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-27 22:30:01.044 CET [8807] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-27 22:30:01.045 CET [8807] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-27 22:30:01.054 CET [8808] LOG:  database system was shut down at 2021-03-27 22:30:00 CET
+2021-03-27 22:30:01.059 CET [8807] LOG:  database system is ready to accept connections
+2021-03-28 14:24:51.679 CEST [8807] LOG:  received fast shutdown request
+2021-03-28 14:24:51.680 CEST [8807] LOG:  aborting any active transactions
+2021-03-28 14:24:51.680 CEST [8821] FATAL:  terminating connection due to administrator command
+2021-03-28 14:24:51.681 CEST [8807] LOG:  background worker "logical replication launcher" (PID 8814) exited with exit code 1
+2021-03-28 14:24:51.681 CEST [8809] LOG:  shutting down
+2021-03-28 14:24:51.689 CEST [8807] LOG:  database system is shut down
+2021-03-28 14:24:53.535 CEST [85728] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-03-28 14:24:53.537 CEST [85728] LOG:  listening on IPv6 address "::1", port 5432
+2021-03-28 14:24:53.538 CEST [85728] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-03-28 14:24:53.538 CEST [85728] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-03-28 14:24:53.545 CEST [85729] LOG:  database system was shut down at 2021-03-28 14:24:53 CEST
+2021-03-28 14:24:53.553 CEST [85728] LOG:  database system is ready to accept connections
+2021-04-03 17:56:50.222 CEST [85728] LOG:  received fast shutdown request
+2021-04-03 17:56:50.223 CEST [85728] LOG:  aborting any active transactions
+2021-04-03 17:56:50.226 CEST [85728] LOG:  background worker "logical replication launcher" (PID 85735) exited with exit code 1
+2021-04-03 17:56:50.226 CEST [85730] LOG:  shutting down
+2021-04-03 17:56:50.240 CEST [85728] LOG:  database system is shut down
+2021-04-03 17:56:52.310 CEST [88051] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-03 17:56:52.314 CEST [88051] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-03 17:56:52.314 CEST [88051] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-03 17:56:52.315 CEST [88051] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-03 17:56:52.321 CEST [88052] LOG:  database system was shut down at 2021-04-03 17:56:52 CEST
+2021-04-03 17:56:52.328 CEST [88051] LOG:  database system is ready to accept connections
+2021-04-03 17:57:04.193 CEST [88069] FATAL:  lock file "postmaster.pid" already exists
+2021-04-03 17:57:04.193 CEST [88069] HINT:  Is another postmaster (PID 88051) running in data directory "/Users/paulo/MiniApp/DB"?
+2021-04-03 17:57:20.488 CEST [88051] LOG:  received fast shutdown request
+2021-04-03 17:57:20.494 CEST [88051] LOG:  aborting any active transactions
+2021-04-03 17:57:20.495 CEST [88051] LOG:  background worker "logical replication launcher" (PID 88058) exited with exit code 1
+2021-04-03 17:57:20.496 CEST [88053] LOG:  shutting down
+2021-04-03 17:57:20.516 CEST [88051] LOG:  database system is shut down
+2021-04-03 17:57:22.626 CEST [88100] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-03 17:57:22.629 CEST [88100] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-03 17:57:22.629 CEST [88100] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-03 17:57:22.630 CEST [88100] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-03 17:57:22.635 CEST [88101] LOG:  database system was shut down at 2021-04-03 17:57:22 CEST
+2021-04-03 17:57:22.638 CEST [88100] LOG:  database system is ready to accept connections
+2021-04-03 17:59:22.895 CEST [88100] LOG:  received fast shutdown request
+2021-04-03 17:59:22.901 CEST [88100] LOG:  aborting any active transactions
+2021-04-03 17:59:22.904 CEST [88100] LOG:  background worker "logical replication launcher" (PID 88107) exited with exit code 1
+2021-04-03 17:59:22.904 CEST [88102] LOG:  shutting down
+2021-04-03 17:59:22.924 CEST [88100] LOG:  database system is shut down
+2021-04-03 17:59:25.059 CEST [88185] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-03 17:59:25.063 CEST [88185] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-03 17:59:25.063 CEST [88185] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-03 17:59:25.064 CEST [88185] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-03 17:59:25.071 CEST [88186] LOG:  database system was shut down at 2021-04-03 17:59:24 CEST
+2021-04-03 17:59:25.082 CEST [88185] LOG:  database system is ready to accept connections
+2021-04-03 20:59:30.466 CEST [88185] LOG:  could not open file "postmaster.pid": No such file or directory
+2021-04-03 20:59:30.471 CEST [88185] LOG:  performing immediate shutdown because data directory lock file is invalid
+2021-04-03 20:59:30.471 CEST [88185] LOG:  received immediate shutdown request
+2021-04-03 20:59:30.471 CEST [88185] LOG:  could not open file "postmaster.pid": No such file or directory
+2021-04-03 20:59:30.472 CEST [88190] WARNING:  terminating connection because of crash of another server process
+2021-04-03 20:59:30.472 CEST [88190] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+2021-04-03 20:59:30.472 CEST [88190] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+2021-04-03 20:59:30.473 CEST [88191] LOG:  could not open temporary statistics file "pg_stat/global.tmp": No such file or directory
+2021-04-03 20:59:30.474 CEST [88211] WARNING:  terminating connection because of crash of another server process
+2021-04-03 20:59:30.474 CEST [88211] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+2021-04-03 20:59:30.474 CEST [88211] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+2021-04-03 20:59:30.477 CEST [88185] LOG:  database system is shut down
