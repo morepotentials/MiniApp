@@ -9,17 +9,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
-    <script src="app.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Vue Dynamic Styling</h1>
-    </header>
-    <section id="styling">
-      <div class="demo" :style="{borderColor: aSel ? 'red' : '#ccc'}" v-on:click="boxSel('A')"></div>
-      <div class="demo" v-on:click="boxSel('B')"></div>
-      <div class="demo" v-on:click="boxSel('C')"></div>
-    </section>
+    <h1>My App</h1>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="app.js"></script>
   </body>
 </html>
