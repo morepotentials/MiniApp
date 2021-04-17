@@ -6,11 +6,17 @@ import (
 	"net/http"
 )
 
-func main() {
+func newMockFetcher () UsersFetcher{
+	return JSONRefresherUsersFetcher{
+		filename: "testdata/users.json", 
+	}
+}
+
+func main() {  //flags mock, db
 	host := ":8080"
 	MyService := Service{
 		Host:    host,
-		Fetcher: NewAnyUsersFetcherFromJSONFile("testdata/users.json"),
+		Fetcher: newDatabaseUsersFetcher(),
 	}
 
 	http.HandleFunc("/users", MyService.HandleListUsersEndpoint)

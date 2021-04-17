@@ -13,8 +13,8 @@
     },
     {
         "id": 2,
-        "first_name": "foo",
-        "last_name": "bar",
-        "email": "foobar@gmail.com"
+        "first_name": "test",
+        "last_name": "refresh",
+        "email": "testrefresh@gmail.com"
     }
 ]

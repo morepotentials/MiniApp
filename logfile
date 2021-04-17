@@ -192,3 +192,54 @@
 2021-04-03 20:59:30.474 CEST [88211] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
 2021-04-03 20:59:30.474 CEST [88211] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
 2021-04-03 20:59:30.477 CEST [88185] LOG:  database system is shut down
+2021-04-17 23:12:29.124 CEST [34641] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-17 23:12:29.127 CEST [34641] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-17 23:12:29.128 CEST [34641] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-17 23:12:29.128 CEST [34641] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-17 23:12:29.132 CEST [34642] LOG:  database system was shut down at 2021-04-17 23:12:18 CEST
+2021-04-17 23:12:29.137 CEST [34641] LOG:  database system is ready to accept connections
+2021-04-17 23:14:17.338 CEST [34715] FATAL:  role "postgres" does not exist
+2021-04-17 23:25:43.461 CEST [35027] ERROR:  relation "users" does not exist at character 16
+2021-04-17 23:25:43.461 CEST [35027] STATEMENT:  SELECT id FROM users
+2021-04-17 23:32:49.815 CEST [34641] LOG:  received fast shutdown request
+2021-04-17 23:32:49.821 CEST [34641] LOG:  aborting any active transactions
+2021-04-17 23:32:49.823 CEST [34641] LOG:  background worker "logical replication launcher" (PID 34648) exited with exit code 1
+2021-04-17 23:32:49.823 CEST [34643] LOG:  shutting down
+2021-04-17 23:32:49.830 CEST [34641] LOG:  database system is shut down
+2021-04-17 23:32:51.841 CEST [35234] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-17 23:32:51.844 CEST [35234] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-17 23:32:51.845 CEST [35234] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-17 23:32:51.846 CEST [35234] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-17 23:32:51.853 CEST [35238] LOG:  database system was shut down at 2021-04-17 23:32:51 CEST
+2021-04-17 23:32:51.860 CEST [35234] LOG:  database system is ready to accept connections
+2021-04-17 23:32:51.963 CEST [35250] ERROR:  column "Erik" does not exist at character 58
+2021-04-17 23:32:51.963 CEST [35250] STATEMENT:  INSERT INTO users (first_name, last_name, email) VALUES ("Erik", "Haight", "erik(at)sojern.com");
+2021-04-17 23:32:51.963 CEST [35250] ERROR:  column "Paulo" does not exist at character 58
+2021-04-17 23:32:51.963 CEST [35250] STATEMENT:  INSERT INTO users (first_name, last_name, email) VALUES ("Paulo", "Engelke", "peengelke(at)gmail.com");
+2021-04-17 23:33:50.211 CEST [35269] ERROR:  column "Erik" does not exist at character 58
+2021-04-17 23:33:50.211 CEST [35269] STATEMENT:  INSERT INTO users (first_name, last_name, email) VALUES ("Erik", "Haight", "erik(at)sojern.com");
+2021-04-17 23:35:18.460 CEST [35234] LOG:  received fast shutdown request
+2021-04-17 23:35:18.460 CEST [35234] LOG:  aborting any active transactions
+2021-04-17 23:35:18.461 CEST [35234] LOG:  background worker "logical replication launcher" (PID 35244) exited with exit code 1
+2021-04-17 23:35:18.461 CEST [35239] LOG:  shutting down
+2021-04-17 23:35:18.476 CEST [35234] LOG:  database system is shut down
+2021-04-17 23:35:20.305 CEST [35350] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-17 23:35:20.308 CEST [35350] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-17 23:35:20.308 CEST [35350] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-17 23:35:20.309 CEST [35350] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-17 23:35:20.313 CEST [35351] LOG:  database system was shut down at 2021-04-17 23:35:20 CEST
+2021-04-17 23:35:20.316 CEST [35350] LOG:  database system is ready to accept connections
+2021-04-17 23:39:48.850 CEST [35537] ERROR:  syntax error at or near ""SELECT id FROM users"" at character 1
+2021-04-17 23:39:48.850 CEST [35537] STATEMENT:  "SELECT id FROM users"
+	"SELECT id FROM users";
+2021-04-17 23:41:17.051 CEST [35350] LOG:  received fast shutdown request
+2021-04-17 23:41:17.056 CEST [35350] LOG:  aborting any active transactions
+2021-04-17 23:41:17.058 CEST [35350] LOG:  background worker "logical replication launcher" (PID 35357) exited with exit code 1
+2021-04-17 23:41:17.058 CEST [35352] LOG:  shutting down
+2021-04-17 23:41:17.066 CEST [35350] LOG:  database system is shut down
+2021-04-17 23:41:18.949 CEST [35630] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.62), 64-bit
+2021-04-17 23:41:18.953 CEST [35630] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-17 23:41:18.953 CEST [35630] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-17 23:41:18.954 CEST [35630] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-17 23:41:18.961 CEST [35631] LOG:  database system was shut down at 2021-04-17 23:41:18 CEST
+2021-04-17 23:41:18.968 CEST [35630] LOG:  database system is ready to accept connections
