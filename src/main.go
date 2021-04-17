@@ -6,17 +6,27 @@ import (
 	"net/http"
 )
 
-func newMockFetcher () UsersFetcher{
+func newMockFetcher() JSONRefresherUsersFetcher {
 	return JSONRefresherUsersFetcher{
-		filename: "testdata/users.json", 
+		filename: "testdata/users.json",
 	}
 }
 
-func main() {  //flags mock, db
+func main() { //flags mock, db
 	host := ":8080"
+
+	// TODO(paulo): look into command line arguments (golang flags package)
+	// and pass this 'mock' flag as a command line argument.
+	mock := true
+
 	MyService := Service{
-		Host:    host,
-		Fetcher: newDatabaseUsersFetcher(),
+		Host: host,
+	}
+
+	if mock {
+		MyService.Fetcher = newMockFetcher()
+	} else {
+		MyService.Fetcher = newDatabaseUsersFetcher()
 	}
 
 	http.HandleFunc("/users", MyService.HandleListUsersEndpoint)
