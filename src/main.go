@@ -7,66 +7,55 @@ import (
 )
 
 func main() {
-	paulo := User{
-		ID: 0,
-		FirstName: "Paulo",
-		LastName: "Engelke",
-		Email:"peengelke(at)gmail.com",
-	}
-	erik := User{
-		ID: 1,
-		FirstName: "Erik",
-		LastName: "Haight",
-		Email:"ehaight(at)sojern.com",
-	}
-	users := make([]User, 0)
-	users = append(users, paulo) 
-	users = append(users, erik)
+	// erik := User{
+	// 	ID:        1,
+	// 	FirstName: "Erik",
+	// 	LastName:  "Haight",
+	// 	Email:     "ehaight(at)sojern.com",
+	// }
 
-	MyService:= Service{
-		Host: ":8080",
-		Users: users,
+	host := ":8080"
+	MyService := Service{
+		Host:    host,
+		Fetcher: PauloUserFetcher{},
 	}
-	http.HandleFunc("/users", MyService.ListUsers)
+	http.HandleFunc("/users", MyService.HandleListUsersEndpoint)
 	MyService.start()
 }
 
-type UsersFetcher interface {
-	ListUsers() ([]User, error)
-}
 type Service struct {
-	Host string
-	Users []User
-	Fetcher UsersFetcher 
+	Host    string
+	Fetcher UsersFetcher
 }
 
-func (S Service) start(){
+func (S Service) start() {
+	fmt.Printf("starting service on port %s\n", S.Host)
 	http.ListenAndServe(S.Host, nil)
 }
 
 type User struct {
-	ID int `json:"id"`
+	ID        int    `json:"id"`
 	FirstName string `json:"first_name"`
-	LastName string `json:"last_name"`
-	Email string `json:"email"`
+	LastName  string `json:"last_name"`
+	Email     string `json:"email"`
 }
 
-func (S Service) ListUsers(w http.ResponseWriter, r *http.Request){
-	fmt.Println(S.Host)
-	fmt.Println(S.Users)
-
-	bytes, err := json.Marshal(S.Users)
+func (S Service) HandleListUsersEndpoint(w http.ResponseWriter, r *http.Request) {
+	users, err := S.Fetcher.ListUsers()
 	if err != nil {
 		fmt.Println(err)
-		return 
+		return
 	}
-
+	bytes, err := json.Marshal(users)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	_, err = w.Write(bytes)
-	if err !=nil{
+	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Println("hello")
-
 }
