@@ -7,17 +7,10 @@ import (
 )
 
 func main() {
-	// erik := User{
-	// 	ID:        1,
-	// 	FirstName: "Erik",
-	// 	LastName:  "Haight",
-	// 	Email:     "ehaight(at)sojern.com",
-	// }
-
 	host := ":8080"
 	MyService := Service{
 		Host:    host,
-		Fetcher: ErikPauloUserFetcher{},
+		Fetcher: NewAnyUsersFetcherFromJSONFile("testdata/users.json"),
 	}
 
 	http.HandleFunc("/users", MyService.HandleListUsersEndpoint)

@@ -4,67 +4,43 @@ type UsersFetcher interface {
 	ListUsers() ([]User, error)
 }
 
-type PauloUserFetcher struct{}
+// Generic Any Users, can be configured externally.
+// Not only a single user, supports any # of users.
+type AnyUsersFetcher struct {
+	users []User
+}
 
-func (puf PauloUserFetcher) ListUsers() ([]User, error) {
-	paulo := User{
+func (auf AnyUsersFetcher) ListUsers() ([]User, error) {
+	return auf.users, nil
+}
+
+//  Generic Any User. Can be configured externally.
+// Instantiated through a global var. Or passed through main.
+type AnyUserFetcher struct {
+	user User
+}
+
+func (auf AnyUserFetcher) ListUsers() ([]User, error) {
+	users := []User{auf.user}
+	return users, nil
+}
+
+//  Instantiation of AnyUserFetcher, supplying Paulo user.
+var PauloAnyUserFetcher = AnyUserFetcher{
+	user: User{
 		ID:        0,
 		FirstName: "Paulo",
 		LastName:  "Engelke",
 		Email:     "peengelke(at)gmail.com",
-	}
-	users := []User{paulo}
-	return users, nil
+	},
 }
 
-type ErikUserFetcher struct{}
-
-func (euf ErikUserFetcher) ListUsers() ([]User, error) {
-	erik := User{
-		ID: 1,
+//  Instantiation of AnyUserFetcher, supplying Erik user.
+var ErikAnyUserFetcher = AnyUserFetcher{
+	user: User{
+		ID:        1,
 		FirstName: "Erik",
-		LastName: "Haight",
-		Email: "erik(at)sojern.com",
-	}
-	users := []User{erik}
-	return users, nil
+		LastName:  "Haight",
+		Email:     "erik(at)sojern.com",
+	},
 }
-
-type ErikPauloUserFetcher struct{}
-
-func (epuf ErikPauloUserFetcher) ListUsers() ([]User, error){
-	erikFetcher := ErikUserFetcher{}
-	erikUsers, err := erikFetcher.ListUsers()
-	if err != nil {return nil, err}
-	pauloFetcher := PauloUserFetcher{}
-	pauloUsers, err := pauloFetcher.ListUsers()
-	if err !=nil {return nil, err}
-	users := make([]User, 0)
-	users = append(users, erikUsers...)
-	users = append(users, pauloUsers...)
-	return users, err
-}
-
-// TODO(paulo): add new implementation of UsersFetcher interface.
-// should return erik User, similar to the PauloUserFetcher implementation.
-// Swap the Service's UserFetcher implementation to use this.
-
-// func main() {
-// 	paulo :=
-// 	erik := User{
-// 		ID:        1,
-// 		FirstName: "Erik",
-// 		LastName:  "Haight",
-// 		Email:     "ehaight(at)sojern.com",
-// 	}
-// 	users := make([]User, 0)
-// 	users = append(users, paulo)
-// 	users = append(users, erik)
-
-// 	MyService := Service{
-// 		Host:  ":8080",
-// 		Users: users,
-// 	}
-// 	http.HandleFunc("/users", MyService.ListUsers)
-// 	MyService.start()
-// }
