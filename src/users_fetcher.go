@@ -17,6 +17,34 @@ func (puf PauloUserFetcher) ListUsers() ([]User, error) {
 	return users, nil
 }
 
+type ErikUserFetcher struct{}
+
+func (euf ErikUserFetcher) ListUsers() ([]User, error) {
+	erik := User{
+		ID: 1,
+		FirstName: "Erik",
+		LastName: "Haight",
+		Email: "erik(at)sojern.com",
+	}
+	users := []User{erik}
+	return users, nil
+}
+
+type ErikPauloUserFetcher struct{}
+
+func (epuf ErikPauloUserFetcher) ListUsers() ([]User, error){
+	erikFetcher := ErikUserFetcher{}
+	erikUsers, err := erikFetcher.ListUsers()
+	if err != nil {return nil, err}
+	pauloFetcher := PauloUserFetcher{}
+	pauloUsers, err := pauloFetcher.ListUsers()
+	if err !=nil {return nil, err}
+	users := make([]User, 0)
+	users = append(users, erikUsers...)
+	users = append(users, pauloUsers...)
+	return users, err
+}
+
 // TODO(paulo): add new implementation of UsersFetcher interface.
 // should return erik User, similar to the PauloUserFetcher implementation.
 // Swap the Service's UserFetcher implementation to use this.

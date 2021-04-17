@@ -17,8 +17,9 @@ func main() {
 	host := ":8080"
 	MyService := Service{
 		Host:    host,
-		Fetcher: PauloUserFetcher{},
+		Fetcher: ErikPauloUserFetcher{},
 	}
+
 	http.HandleFunc("/users", MyService.HandleListUsersEndpoint)
 	MyService.start()
 }
