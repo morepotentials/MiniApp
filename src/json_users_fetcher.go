@@ -10,6 +10,9 @@ type JSONRefresherUsersFetcher struct {
 	filename string
 }
 
+func (jruf JSONRefresherUsersFetcher) ListBrokerClients(broker_id string) ([]User, error) {
+	return jruf.ListUsers()
+}
 
 
 func (jruf JSONRefresherUsersFetcher) ListUsers() ([]User, error) {
@@ -21,6 +24,7 @@ func (jruf JSONRefresherUsersFetcher) ListUsers() ([]User, error) {
 	return jsonUsers, nil
 }
 
+/*
 func NewAnyUsersFetcherFromJSONFile(filename string) AnyUsersFetcher {
 	buffer, err := ioutil.ReadFile(filename)
 	if err != nil {
@@ -35,3 +39,4 @@ func NewAnyUsersFetcherFromJSONFile(filename string) AnyUsersFetcher {
 		users: jsonUsers,
 	}
 }
+*/

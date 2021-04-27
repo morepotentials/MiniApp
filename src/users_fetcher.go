@@ -2,10 +2,13 @@ package main
 
 type UsersFetcher interface {
 	ListUsers() ([]User, error)
+	ListBrokerClients(broker_id string) ([]User, error)
 }
+
 
 // Generic Any Users, can be configured externally.
 // Not only a single user, supports any # of users.
+/*
 type AnyUsersFetcher struct {
 	users []User
 }
@@ -44,3 +47,5 @@ var ErikAnyUserFetcher = AnyUserFetcher{
 		Email:     "erik(at)sojern.com",
 	},
 }
+
+*/

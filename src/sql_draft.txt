@@ -1,0 +1,51 @@
+//// -- LEVEL 1
+//// -- Tables and References
+
+// Creating tables
+Table users as U {
+  id int [pk, increment] // auto-increment
+  first_name varchar
+  last_name varchar
+  email varchar [unique, not null]
+  type varchar [ref: - user_types.value]
+  created_at timestamp
+}
+
+Enum user_type {
+  client
+  broker
+}
+
+Table user_types as UT {
+  value user_type [pk]
+}
+
+Table brokers as B {
+  id int [pk, ref: - users.id]
+}
+
+Table clients as C {
+  id int [pk, ref: - users.id]
+  broker_id int [ref: > brokers.id] 
+}
+
+
+
+//List Clients given a broker id
+
+//per course points correct answers
+
+//Get my id from my login credentials
+//Assume I have my id
+
+//Get all client ids for me
+//SELECT id FROM clients WHERE broker_id = me
+//return clientid1, clientid2...
+
+//Get all ClientInfo
+//SELECT * FROM users WHERE id IN (client_id1, clientid2...)
+
+//Click on a Client Card 
+//Grab that user id
+//Use id to get statistics for that user
+//SELECT * FROM STATISTICS WHERE user_id = clickedUserId

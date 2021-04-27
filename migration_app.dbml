@@ -1,0 +1,26 @@
+Table users as U {
+  id int [pk, increment] 
+  first_name varchar
+  last_name varchar
+  email varchar [unique, not null]
+  type varchar [ref: - user_types.value]
+  created_at timestamp
+}
+
+Enum user_type {
+  client
+  broker
+}
+
+Table user_types as UT {
+  value user_type [pk]
+}
+
+Table brokers as B {
+  id int [pk, ref: - users.id]
+}
+
+Table clients as C {
+  id int [pk, ref: - users.id]
+  broker_id int [ref: > brokers.id] 
+}

@@ -37,6 +37,33 @@ func newDatabaseUsersFetcher () databaseUsersFetcher {
 	return databaseUsersFetcher{db:db}
 }
 
+
+func (duf databaseUsersFetcher) ListBrokerClients(broker_id string) ([]User, error) {
+		//query db
+		rows, err := duf.db.Query("SELECT id, first_name, last_name, email FROM users U RIGHT JOIN clients C ON U.id = C.client_id WHERE C.broker_id ="+broker_id+";")
+		if err != nil {
+			return nil, err
+		}
+		defer rows.Close()
+		fmt.Println("You got the rows")
+		fmt.Println(rows)
+		//translate db records to []User
+	
+		users := make([]User, 0)
+		for rows.Next() {
+			user := User{}
+			err = rows.Scan(&user.ID, &user.FirstName, &user.LastName, &user.Email)
+			if err != nil {
+				return nil, err
+			}
+			fmt.Println(user)
+			users = append(users, user)
+		}
+	
+		return users, nil
+}
+
+
 func (duf databaseUsersFetcher) ListUsers() ([]User, error) {
 
 	//query db

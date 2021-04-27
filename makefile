@@ -14,8 +14,8 @@ clean_db:
 	rm -rf $(DATA_DIR)
 
 init_db:
-	psql -d postgres -f migration.sql
-	psql -d postgres -f dummy_data.sql
+	psql -d postgres -f migration_app.sql
+	psql -d postgres -f dummy_data_app.sql
 
 login:
 	psql postgres
