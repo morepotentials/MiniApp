@@ -58,7 +58,6 @@ type User struct {
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
 	Email     string `json:"email"`
-	Started		bool	 `json:"started"`
 }
 
 func (S Service) HandleListClientsEndpoint(w http.ResponseWriter, r *http.Request) {
@@ -72,38 +71,38 @@ func (S Service) HandleListClientsEndpoint(w http.ResponseWriter, r *http.Reques
 		fmt.Println(err)
 		return
 	}
-	bytes, err := json.Marshal(users)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	_, err = w.Write(bytes)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println("hello")
+	WriteUsersToResponse(w, users)
 }
 
 
 func (S Service) HandleListUsersEndpoint(w http.ResponseWriter, r *http.Request) {
-	
 	users, err := S.Fetcher.ListUsers()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	WriteUsersToResponse(w, users)
+}
+
+
+func WriteUsersToResponse(w http.ResponseWriter, users []User) {
 	bytes, err := json.Marshal(users)
 	if err != nil {
-		fmt.Println(err)
-		return
+		WriteErrorToResponse(w, err)
+		return 
 	}
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	_, err = w.Write(bytes)
 	if err != nil {
-		fmt.Println(err)
+		WriteErrorToResponse(w, err)
 		return
 	}
-	fmt.Println("hello")
+}
+
+func WriteErrorToResponse(w http.ResponseWriter, e error) {
+	w.WriteHeader(http.StatusInternalServerError) 
+	_, err := w.Write([]byte(e.Error()))
+	if err != nil {
+		panic(err)
+	}
 }
