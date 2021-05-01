@@ -14,21 +14,34 @@ func newMockFetcher() JSONRefresherUsersFetcher {
 		filename: "testdata/users.json",
 	}
 }
+
+type Route struct {
+	path string
+	f    func(http.ResponseWriter, *http.Request)
+}
+
+func NewRouter(routes []Route) *mux.Router {
+	r := mux.NewRouter()
+	for _, route := range routes {
+		r.HandleFunc(route.path, route.f)
+	}
+	return r
+}
+
 //localhost:8080/clients?broker_id="me"
 //localhost:8080/brokers/me/clients
-func main() { 
-	r := mux.NewRouter()
+func main() {
 	portPtr := flag.Int("port", 8080, "port to listen on")
 	isMockPtr := flag.Bool("mock", false, "set to true to enable mockdata")
 	flag.Parse()
-	
+
 	host := fmt.Sprintf(":%d", *portPtr)
 
 	MyService := Service{
 		Host: host,
 	}
 
-	if *isMockPtr{
+	if *isMockPtr {
 		MyService.Fetcher = newMockFetcher()
 		fmt.Println("Successfully initialized mock fetcher")
 	} else {
@@ -36,16 +49,35 @@ func main() {
 		fmt.Println("Successfully initialized database fetcher")
 	}
 
-	r.HandleFunc("/broker/{me}/clients", MyService.HandleListClientsEndpoint)
-	r.HandleFunc("/users", MyService.HandleListUsersEndpoint)
+	r := MyService.NewRouter()
+
 	http.Handle("/", r)
 	MyService.start()
 }
+
 //handle func is going to extract the varibles
 
 type Service struct {
 	Host    string
 	Fetcher UsersFetcher
+}
+
+func (S Service) Routes() []Route {
+	return []Route{
+		{
+			"/broker/{me}/clients",
+			S.HandleListClientsEndpoint,
+		},
+		{
+			"/users",
+			S.HandleListUsersEndpoint,
+		},
+	}
+}
+
+func (S Service) NewRouter() *mux.Router {
+	routes := S.Routes()
+	return NewRouter(routes)
 }
 
 func (S Service) start() {
@@ -68,28 +100,26 @@ func (S Service) HandleListClientsEndpoint(w http.ResponseWriter, r *http.Reques
 
 	users, err := S.Fetcher.ListBrokerClients(broker_id)
 	if err != nil {
-		fmt.Println(err)
+		WriteErrorToResponse(w, err)
 		return
 	}
 	WriteUsersToResponse(w, users)
 }
-
 
 func (S Service) HandleListUsersEndpoint(w http.ResponseWriter, r *http.Request) {
 	users, err := S.Fetcher.ListUsers()
 	if err != nil {
-		fmt.Println(err)
+		WriteErrorToResponse(w, err)
 		return
 	}
 	WriteUsersToResponse(w, users)
 }
-
 
 func WriteUsersToResponse(w http.ResponseWriter, users []User) {
 	bytes, err := json.Marshal(users)
 	if err != nil {
 		WriteErrorToResponse(w, err)
-		return 
+		return
 	}
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	_, err = w.Write(bytes)
@@ -100,7 +130,7 @@ func WriteUsersToResponse(w http.ResponseWriter, users []User) {
 }
 
 func WriteErrorToResponse(w http.ResponseWriter, e error) {
-	w.WriteHeader(http.StatusInternalServerError) 
+	w.WriteHeader(http.StatusInternalServerError)
 	_, err := w.Write([]byte(e.Error()))
 	if err != nil {
 		panic(err)

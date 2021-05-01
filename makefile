@@ -19,3 +19,6 @@ init_db:
 
 login:
 	psql postgres
+
+test:
+	cd ./src && go test . -cover
